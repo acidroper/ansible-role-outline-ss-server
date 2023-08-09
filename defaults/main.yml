@@ -1,0 +1,8 @@
+---
+outliness_version: 1.4.0
+outliness_install_dir: /opt/outline-ss-server
+outliness_keys:
+  - id: user
+    port: 31337
+    cipher: chacha20-ietf-poly1305
+    secret: some-secret

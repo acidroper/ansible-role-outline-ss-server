@@ -1,0 +1,11 @@
+[Unit]
+Description=Outline ShadowSocks Server
+After=network.target
+
+[Service]
+ExecStart={{ outliness_install_dir }}/outline-ss-server \
+    -config {{ outliness_install_dir }}/shadowsocks.yml
+ExecReload=/bin/kill -SIGHUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
