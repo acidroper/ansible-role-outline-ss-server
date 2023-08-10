@@ -1,5 +1,8 @@
 keys:
-  - id: 
-    port: 
-    cipher: 
-    secret: 
+{% for key in outliness_keys %}
+  - id: {{ key.id }}
+    port: {{ key.port }}
+    cipher: {{ key.cipher }}
+    secret: {{ key.secret }}
+
+{% endfor %}

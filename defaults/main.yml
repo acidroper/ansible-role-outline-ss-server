@@ -1,8 +1,11 @@
 ---
 outliness_version: 1.4.0
+outliness_download_url: "https://github.com/Jigsaw-Code/outline-ss-server/releases/download/\
+  v{{ outliness_version }}/outline-ss-server_{{ outliness_version }}_linux_x86_64.tar.gz"
 outliness_install_dir: /opt/outline-ss-server
 outliness_keys:
-  - id: user
+  - id: user-0
     port: 31337
     cipher: chacha20-ietf-poly1305
-    secret: some-secret
+    secret: Change_Me!
+outliness_metrics_address: ""  # 127.0.0.1:9091

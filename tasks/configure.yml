@@ -1,1 +1,7 @@
 ---
+- name: Configure outline-ss-server
+  ansible.builtin.template:
+    src: shadowsocks.yml.j2
+    dest: "{{ outliness_install_dir }}/shadowsocks.yml"
+    mode: '0644'
+  notify: Reload outline-ss-server

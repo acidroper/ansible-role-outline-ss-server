@@ -1,1 +1,11 @@
 ---
+- name: Install
+  ansible.builtin.import_tasks: install.yml
+  tags:
+    - install
+
+- name: Configure
+  ansible.builtin.import_tasks: configure.yml
+  tags:
+    - install
+    - configure
