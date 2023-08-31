@@ -1,0 +1,11 @@
+---
+- name: Restart outline-ss-server
+  ansible.builtin.systemd:
+    daemon_reload: true
+    name: outline-ss-server.service
+    state: restarted
+
+- name: Reload outline-ss-server
+  ansible.builtin.systemd:
+    name: outline-ss-server.service
+    state: reloaded
