@@ -9,3 +9,4 @@ outliness_keys:
     cipher: chacha20-ietf-poly1305
     secret: Change_Me!
 outliness_metrics_address: ""  # 127.0.0.1:9091
+outliness_host: ""  # hostname or IP of SS server

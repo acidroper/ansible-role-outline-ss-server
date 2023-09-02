@@ -5,3 +5,10 @@
     dest: "{{ outliness_install_dir }}/shadowsocks.yml"
     mode: '0644'
   notify: Reload outline-ss-server
+
+- name: Print Shadowsocks connection strings
+  ansible.builtin.debug:
+    msg: "{{ item.id }}: ss://{{ (item.cipher + ':' + item.secret) | b64encode }}@{{ outliness_host + ':' + item.port | string }}"
+  loop: "{{ outliness_keys }}"
+  tags:
+    - print-configs
