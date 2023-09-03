@@ -9,6 +9,7 @@ ExecStart={{ outliness_install_dir.rstrip('/') }}/outline-ss-server \
     {% endif %}
     -config={{ outliness_install_dir.rstrip('/') }}/shadowsocks.yml
 ExecReload=/bin/kill -SIGHUP $MAINPID
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
