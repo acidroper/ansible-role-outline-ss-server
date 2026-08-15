@@ -1,7 +1,7 @@
 ---
 - name: Ensure install directory exists
   ansible.builtin.file:
-    path: "{{ outliness_install_dir }}"
+    path: "{{ outline_ss_server_install_dir }}"
     state: directory
     owner: root
     group: root
@@ -9,8 +9,8 @@
 
 - name: Get and unarchive outline-ss-server binary
   ansible.builtin.unarchive:
-    src: "{{ outliness_download_url }}"
-    dest: "{{ outliness_install_dir }}"
+    src: "{{ outline_ss_server_download_url }}"
+    dest: "{{ outline_ss_server_install_dir }}"
     remote_src: true
   notify: Restart outline-ss-server
 

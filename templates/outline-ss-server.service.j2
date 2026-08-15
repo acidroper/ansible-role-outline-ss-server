@@ -4,11 +4,11 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart={{ outliness_install_dir.rstrip('/') }}/outline-ss-server \
-    {% if outliness_metrics_address != "" %}
-    -metrics={{ outliness_metrics_address }} \
+ExecStart={{ outline_ss_server_install_dir.rstrip('/') }}/outline-ss-server \
+    {% if outline_ss_server_metrics_address != "" %}
+    -metrics={{ outline_ss_server_metrics_address }} \
     {% endif %}
-    -config={{ outliness_install_dir.rstrip('/') }}/shadowsocks.yml
+    -config={{ outline_ss_server_install_dir.rstrip('/') }}/shadowsocks.yml
 ExecReload=/bin/kill -SIGHUP $MAINPID
 Restart=on-failure
 

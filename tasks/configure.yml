@@ -2,13 +2,13 @@
 - name: Configure outline-ss-server
   ansible.builtin.template:
     src: shadowsocks.yml.j2
-    dest: "{{ outliness_install_dir }}/shadowsocks.yml"
+    dest: "{{ outline_ss_server_install_dir }}/shadowsocks.yml"
     mode: '0644'
   notify: Reload outline-ss-server
 
 - name: Print Shadowsocks connection strings
   ansible.builtin.debug:
-    msg: "{{ item.id }}: ss://{{ (item.cipher + ':' + item.secret) | b64encode }}@{{ outliness_host + ':' + item.port | string }}"
-  loop: "{{ outliness_keys }}"
+    msg: "{{ item.id }}: ss://{{ (item.cipher + ':' + item.secret) | b64encode }}@{{ outline_ss_server_host + ':' + item.port | string }}"
+  loop: "{{ outline_ss_server_keys }}"
   tags:
     - print-configs
